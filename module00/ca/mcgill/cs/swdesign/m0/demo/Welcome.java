@@ -28,7 +28,7 @@ public class Welcome extends Application implements EventHandler<ActionEvent>, C
 	private static final int WIDTH = 180;
 	private static final int HEIGHT = 200;
 	private static final String PART_1 = "Welcome";
-	private static final String PART_2 = "to COMP 303";
+	private static final String PART_2 = "to your Software Design course";
 
 	private AlternatingLabelProvider aLabelProvider = new AlternatingLabelProvider(PART_1, PART_2);
 	private Label aText = new Label();
