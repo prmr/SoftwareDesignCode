@@ -5,13 +5,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 /**
  * A class to store and manage images of the 52 cards.
  */
 public final class CardImages 
 {
-	private static final String IMAGE_LOCATION = "images/";
 	private static final String IMAGE_SUFFIX = ".gif";
 	private static final String[] RANK_CODES = {"2", "3", "4", "5", "6", "7", "8", "9", "t", "j", "q", "k", "a"};
 	private static final String[] SUIT_CODES = {"c", "d", "s", "h"};	
@@ -20,6 +21,21 @@ public final class CardImages
 	
 	private CardImages()
 	{}
+	
+	/**
+	 * Demo/tester to ensure the card images can correctly 
+	 * be found on the classpath.
+	 * 
+	 * @param pArgs Not used.
+	 */
+	public static void main(String[] pArgs)
+	{
+		JFrame frame = new JFrame();
+		frame.add(new JLabel(CardImages.getBack()));
+		frame.pack();
+		frame.setVisible(true);
+		
+	}
 	
 	/**
 	 * Return the image of a card.
@@ -59,7 +75,7 @@ public final class CardImages
 		ImageIcon lIcon = (ImageIcon) aCards.get( pCode );
 		if( lIcon == null )
 		{
-			lIcon = new ImageIcon(CardImages.class.getClassLoader().getResource( IMAGE_LOCATION + pCode + IMAGE_SUFFIX ));
+			lIcon = new ImageIcon(CardImages.class.getClassLoader().getResource( pCode + IMAGE_SUFFIX ));
 			aCards.put( pCode, lIcon );
 		}
 		return lIcon;
