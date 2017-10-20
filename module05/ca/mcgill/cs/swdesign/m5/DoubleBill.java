@@ -21,7 +21,27 @@ public class DoubleBill implements Show
 		aMovie1 = pMovie1;
 		aMovie2 = pMovie2;
 	}
-
+	
+	/* (non-Javadoc)
+	 * Performs a deep copy of the object, resulting in a completely distinct object graph.
+	 * @see java.lang.Object#clone()
+	 */
+	@Override
+	public DoubleBill clone()
+	{
+		try
+		{
+			DoubleBill clone = (DoubleBill) super.clone();
+			clone.aMovie1 = aMovie1.clone();
+			clone.aMovie2 = aMovie2.clone();
+			return clone;
+		}
+		catch (CloneNotSupportedException e)
+		{
+			return null;
+		}
+	}
+	
 	@Override
 	public String description()
 	{

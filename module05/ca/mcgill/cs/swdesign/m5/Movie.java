@@ -23,6 +23,19 @@ public class Movie implements Show
 		aYear = pYear;
 		aRunningTime = pTime;
 	}
+	
+	@Override
+	public Movie clone()
+	{
+		try
+		{
+			return (Movie) super.clone();
+		}
+		catch (CloneNotSupportedException e)
+		{
+			return null;
+		}
+	}
 
 	@Override
 	public String description()

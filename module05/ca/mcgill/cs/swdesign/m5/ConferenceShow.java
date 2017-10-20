@@ -23,7 +23,17 @@ public class ConferenceShow implements Show
 		aTime = pTime;
 		aSpeaker = pSpeaker;
 	}
-
+	
+	/* (non-Javadoc)
+	 * Perform a deep copy of the object, resulting in a distinct object graph.
+	 * @see java.lang.Object#clone()
+	 */
+	@Override
+	public ConferenceShow clone()
+	{
+		return null; // TODO Implementation left as an exercise.
+	}
+	
 	@Override
 	public Iterator<Movie> iterator()
 	{

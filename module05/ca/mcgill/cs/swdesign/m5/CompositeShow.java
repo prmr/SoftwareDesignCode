@@ -27,6 +27,30 @@ public class CompositeShow implements Show
 			aShows.add(show);
 		}
 	}
+	
+	/* (non-Javadoc)
+	 * Performs a deep copy of the composite object, resulting
+	 * in a completely distinct object graph.
+	 * @see java.lang.Object#clone()
+	 */
+	@Override
+	public CompositeShow clone()
+	{
+		try
+		{
+			CompositeShow clone = (CompositeShow) super.clone();
+			clone.aShows = new ArrayList<>();
+			for( Show show : aShows)
+			{
+				clone.aShows.add(show.clone());
+			}
+			return clone;
+		}
+		catch (CloneNotSupportedException e)
+		{
+			return null;
+		}
+	}
 
 	@Override
 	public String description()
