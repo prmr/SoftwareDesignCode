@@ -1,7 +1,6 @@
 package ca.mcgill.cs.swdesign.m2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -10,8 +9,8 @@ import java.util.List;
  */
 public class Hand implements Iterable<Card>
 {
-	private final int aMaxCards;
-	private final List<Card> aCards = new ArrayList<>();
+	private int aMaxCards;
+	private List<Card> aCards = new ArrayList<>();
 	
 	/**
 	 * Creates a new hand that can hold between
