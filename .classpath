@@ -6,6 +6,7 @@
 	<classpathentry kind="src" path="module03"/>
 	<classpathentry kind="src" path="module05"/>
 	<classpathentry kind="src" path="images"/>
+	<classpathentry kind="src" path="module06"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
