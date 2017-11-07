@@ -103,15 +103,23 @@ class HandPanel extends JPanel
 	{
 		setBackground(CASINO_GREEN);
 		add(aLabel);
-		Icon icon = null; // TODO Correctly initialize a single icon that represents the back of 13 cards
-		// TODO 
+		CompositeIcon icon = new CompositeIcon();
+		for( int i = 0; i < 13; i++ )
+		{
+			icon.addIcon(new ShiftedIcon(CardImages.getBack(), 20*i, 5 * i));
+		}
 		aLabel.setIcon(icon);
 	}
 	
 	public void showHand(Card[] pHand)
 	{
-		Icon icon = null; // TODO Correctly initialize a single icon that represents the front of 13 cards
-		// TODO 
+		Deck deck = new Deck();
+		deck.shuffle();
+		CompositeIcon icon = new CompositeIcon();
+		for( int i = 0; i < 13; i++ )
+		{
+			icon.addIcon(new ShiftedIcon(CardImages.getCard(deck.draw()), 20*i, 5 * i));
+		}
 		aLabel.setIcon(icon);
 	}
 }
